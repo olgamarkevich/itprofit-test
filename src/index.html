@@ -5,29 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test task itprofit</title>
   </head>
+
   <body>
     <div class="wrapper">
       <div class="wrapper-left"></div>
+
       <div class="wrapper-right">
-        <form class="form">
+        <form id="signup" class="form" novalidate>
           <div class="open-popup">Open popup</div>
           <div class="form-title">Sign Up</div>
-          <label for="firstname" class="form-label">Firstname</label>
-          <input id="firstname" type="text" class="input" required />
 
-          <label for="email" class="form-label">Email</label>
-          <input id="email" type="email" class="input" required />
+          <div class="form-line">
+            <label for="firstname" class="form-label">Firstname</label>
+            <input id="firstname" type="text" class="input" required />
+            <div class="error-line" aria-live="polite"></div>
+          </div>
 
-          <label for="phone" class="form-label">Firstname</label>
-          <input id="phone" type="text" class="input" required />
+          <div class="form-line">
+            <label for="email" class="form-label">Email</label>
+            <input id="email" type="email" class="input" required />
+            <div class="error-line" aria-live="polite"></div>
+          </div>
 
-          <label for="message" class="form-label">Message</label>
-          <textarea id="message" class="input textarea" required></textarea>
+          <div class="form-line">
+            <label for="phone" class="form-label">Phone</label>
+            <input id="phone" type="text" class="input" required />
+            <div class="error-line" aria-live="polite"></div>
+          </div>
+
+          <div class="form-line">
+            <label for="message" class="form-label">Message</label>
+            <textarea
+              id="message"
+              class="input textarea"
+              required
+              minlength="10"
+            ></textarea>
+            <div class="error-line" aria-live="polite"></div>
+          </div>
 
           <div class="center">
             <button class="btn">Submit</button>
           </div>
         </form>
+      </div>
+
+      <div id="modal-popup" class="modal-popup">
+        <div class="modal-wrapper">
+          <h3>Modal</h3>
+          <p>Registration completed successfullyt</p>
+          <div class="right">
+            <button class="close">Close</button>
+          </div>
+        </div>
       </div>
     </div>
   </body>
