@@ -25,6 +25,7 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
+    "inputmask": "^5.0.8",
     "normalize.css": "^8.0.1"
   }
 }
