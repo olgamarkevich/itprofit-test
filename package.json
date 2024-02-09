@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack serve --open --mode development",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "server": "node server/index.js"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +26,8 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
     "inputmask": "^5.0.8",
     "normalize.css": "^8.0.1"
   }
