@@ -4,6 +4,10 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .form {
   max-width: 700px;
   margin: 0 auto;
@@ -21,14 +25,29 @@ body {
   }
   .open-popup {
     display: inline-block;
-    color: #8692a6;
+    color: #a076f0;
     cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+  }
+  .error {
+    position: absolute;
+    bottom: -16px;
+    font-size: 12px;
+  }
+  .form-line {
+    position: relative;
+    margin-bottom: 30px;
+    color: red;
   }
 }
 
 .wrapper {
   display: flex;
   min-height: 100vh;
+  position: relative;
+  z-index: 4;
 
   .wrapper-left,
   .wrapper-right {
@@ -41,6 +60,10 @@ body {
 
   .wrapper-left {
     background: #2c73eb;
+    background-position: center;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-image: url('https://img.freepik.com/free-vector/sign-page-abstract-concept-illustration_335657-3875.jpg?w=826&t=st=1707481769~exp=1707482369~hmac=7f110d9608fd7a2c842bf339a8926350978afe58276c716bb0590b98eb44abaa');
   }
 }
 
@@ -53,11 +76,22 @@ body {
 .input {
   width: 100%;
   outline: none;
-  margin-bottom: 20px;
   padding: 0 10px;
   border: 1px solid #8692a6;
-  height: 40px;
+  height: 44px;
   border-radius: 6px;
+
+  &:invalid {
+    border-color: brown;
+  }
+
+  &:focus:invalid {
+    border-color: #000;
+  }
+
+  &:valid {
+    border-color: green;
+  }
 
   &.textarea {
     resize: none;
@@ -81,5 +115,53 @@ body {
 
   &:hover {
     background: #cecece;
+  }
+}
+
+.modal-popup {
+  visibility: hidden;
+  opacity: 0;
+
+  transform: scale(1.3);
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(21, 17, 17, 0.61);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1;
+
+  &.open {
+    visibility: visible;
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+    transform: scale(1);
+  }
+  .modal-wrapper {
+    background: #fff;
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  .right {
+    text-align: right;
+  }
+  .close {
+    background: #2c73eb;
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 3px;
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }
