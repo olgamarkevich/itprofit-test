@@ -29,7 +29,13 @@
 
           <div class="form-line">
             <label for="phone" class="form-label">Phone</label>
-            <input id="phone" type="text" class="input" required />
+            <input
+              id="phone"
+              type="text"
+              class="input"
+              pattern="\+375-\d{2}-\d{3}-\d{2}-\d{2}"
+              required
+            />
             <div class="error-line" aria-live="polite"></div>
           </div>
 
@@ -44,8 +50,9 @@
             <div class="error-line" aria-live="polite"></div>
           </div>
 
+          <div class="server-message"></div>
           <div class="center">
-            <button class="btn">Submit</button>
+            <button id="form-btn" class="btn" disabled>Submit</button>
           </div>
         </form>
       </div>
@@ -53,7 +60,7 @@
       <div id="modal-popup" class="modal-popup">
         <div class="modal-wrapper">
           <h3>Modal</h3>
-          <p>Registration completed successfullyt</p>
+          <p>Registration completed successfully</p>
           <div class="right">
             <button class="close">Close</button>
           </div>

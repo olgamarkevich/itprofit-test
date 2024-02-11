@@ -41,6 +41,18 @@ body {
     margin-bottom: 30px;
     color: red;
   }
+
+  .server-message {
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 16px;
+    &.success {
+      color: green;
+    }
+    &.error-m {
+      color: red;
+    }
+  }
 }
 
 .wrapper {
@@ -81,12 +93,8 @@ body {
   height: 44px;
   border-radius: 6px;
 
-  &:invalid {
+  &.durty:invalid {
     border-color: brown;
-  }
-
-  &:focus:invalid {
-    border-color: #000;
   }
 
   &:valid {
@@ -114,6 +122,11 @@ body {
   transition: all 0.3s;
 
   &:hover {
+    background: #cecece;
+  }
+  &:disabled {
+    cursor: default;
+
     background: #cecece;
   }
 }
@@ -162,6 +175,26 @@ body {
     border-radius: 3px;
     &:hover {
       opacity: 0.8;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .wrapper {
+    flex-wrap: wrap;
+    .wrapper-right {
+      width: 100%;
+      padding: 30px 10px 10px 10px;
+    }
+
+    .wrapper-left {
+      width: 100%;
+      min-height: 140px;
+      background-size: 140px;
+    }
+    .form .open-popup {
+      top: 140px;
+      right: 3px;
     }
   }
 }
