@@ -8,6 +8,9 @@ body {
   box-sizing: border-box;
 }
 
+$error-color: #cf1515;
+$btn-color: #2c73eb;
+
 .form {
   max-width: 700px;
   margin: 0 auto;
@@ -23,6 +26,7 @@ body {
   .center {
     text-align: center;
   }
+
   .open-popup {
     display: inline-block;
     color: #a076f0;
@@ -39,7 +43,7 @@ body {
   .form-line {
     position: relative;
     margin-bottom: 30px;
-    color: red;
+    color: $error-color;
   }
 
   .server-message {
@@ -50,7 +54,7 @@ body {
       color: green;
     }
     &.error-m {
-      color: red;
+      color: $error-color;
     }
   }
 }
@@ -71,7 +75,7 @@ body {
   }
 
   .wrapper-left {
-    background: #2c73eb;
+    background: $btn-color;
     background-position: center;
     background-size: 80%;
     background-repeat: no-repeat;
@@ -94,7 +98,7 @@ body {
   border-radius: 6px;
 
   &.durty:invalid {
-    border-color: brown;
+    border-color: $error-color;
   }
 
   &:valid {
@@ -109,7 +113,7 @@ body {
 }
 
 .btn {
-  background: #2c73eb;
+  background: $btn-color;
   color: #fff;
   text-transform: uppercase;
   display: inline-block;
@@ -166,7 +170,7 @@ body {
     text-align: right;
   }
   .close {
-    background: #2c73eb;
+    background: $btn-color;
     border: none;
     color: #fff;
     padding: 10px 15px;
