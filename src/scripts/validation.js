@@ -22,6 +22,7 @@ const labels = {
 
 fields.forEach((field) => {
   field.addEventListener('input', function (event) {
+    field.classList.add('durty');
     serverMessage.innerHTML = '';
     if (field.validity.valid) {
       labels[field.id].textContent = '';
